@@ -11,7 +11,9 @@ JUDGE_MODEL_PATH="/root/autodl-tmp/Qwen2.5-7B-Instruct"
 
 <img width="711" height="511" alt="ad5f48bdbbbd4f45660bb369440a6898" src="https://github.com/user-attachments/assets/d07e50da-0832-4384-9681-a830c6d93fc1" />
 2、在这里进行相关参数的配置
-2.1 gemma31b主要是指模型的配置文件的名字，需要同步在
+
+2.1 gemma31b主要是指模型的配置文件的名字，需要将文件同步在上面的config文件夹中
+
 <img width="1131" height="1039" alt="image" src="https://github.com/user-attachments/assets/1ef290f9-6e90-4b4d-9a72-c961b377fa53" />
 
 
