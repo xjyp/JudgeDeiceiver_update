@@ -1,5 +1,3 @@
-直接下载tap.py替换即可或者下载tap_reproduce运行
-
 # JudgeDeiceiver
 这个项目主要跑Judgedeceiver/JudgeDeceiver-main/experiments/basic_scripts/下面的run_attack.sh
 
