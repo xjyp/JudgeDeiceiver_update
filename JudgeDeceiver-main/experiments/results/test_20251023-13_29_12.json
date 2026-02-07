@@ -1,0 +1,41 @@
+{
+    "params": {
+        "intros": [],
+        "texts1": [],
+        "texts2": [],
+        "targets": [],
+        "test_intros": [],
+        "test_texts1": [],
+        "test_texts2": [],
+        "test_targets": [],
+        "progressive_goals": true,
+        "progressive_models": false,
+        "control_init": "correct correct correct correct correct correct",
+        "align_weight": 1.0,
+        "enhance_weight": 1.0,
+        "perplexity_weight": 0.1,
+        "models": [
+            {
+                "model_path": "/root/autodl-tmp/Qwen3-8B",
+                "tokenizer_path": "/root/autodl-tmp/Qwen3-8B",
+                "conv_template": "qwen-7b-chat"
+            }
+        ],
+        "test_models": [],
+        "n_steps": 10,
+        "test_steps": 1,
+        "batch_size": 16,
+        "topk": 256,
+        "temp": 1,
+        "allow_non_ascii": false,
+        "target_weight": 1.0,
+        "control_weight": 0.1,
+        "anneal": false,
+        "incr_control": false,
+        "stop_on_success": true
+    },
+    "controls": [],
+    "losses": [],
+    "runtimes": [],
+    "tests": []
+}

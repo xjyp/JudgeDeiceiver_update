@@ -1,0 +1,95 @@
+nohup: ignoring input
+Folder '../eval/gemma3_12' created.
+🔍 没有 target 字段，开始通过 VLLMJudge 解析 text 获取 preference...
+
+INFO 12-07 10:17:10 [utils.py:253] non-default args: {'trust_remote_code': True, 'dtype': 'bfloat16', 'disable_log_stats': True, 'enforce_eager': True, 'model': '/share/disk/llm_cache/gemma-3-4b-it'}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+INFO 12-07 10:17:10 [model.py:631] Resolved architecture: Gemma3ForConditionalGeneration
+INFO 12-07 10:17:10 [model.py:1745] Using max model len 131072
+INFO 12-07 10:17:10 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 12-07 10:17:10 [vllm.py:500] Cudagraph is disabled under eager mode
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m INFO 12-07 10:17:14 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='/share/disk/llm_cache/gemma-3-4b-it', speculative_config=None, tokenizer='/share/disk/llm_cache/gemma-3-4b-it', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/share/disk/llm_cache/gemma-3-4b-it, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m INFO 12-07 10:17:15 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://192.168.80.2:56945 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m INFO 12-07 10:17:15 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842] EngineCore failed to start.
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842] Traceback (most recent call last):
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 833, in run_engine_core
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]     engine_core = EngineCoreProc(*args, **kwargs)
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 606, in __init__
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]     super().__init__(
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]     self.model_executor = executor_class(vllm_config)
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]     self._init_executor()
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]     self.driver_worker.init_device()
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/worker/worker_base.py", line 324, in init_device
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]     self.worker.init_device()  # type: ignore
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/worker/gpu_worker.py", line 247, in init_device
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842]     raise ValueError(
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ERROR 12-07 10:17:15 [core.py:842] ValueError: Free memory on device (6.28/79.33 GiB) on startup is less than desired GPU memory utilization (0.9, 71.39 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m Process EngineCore_DP0:
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m Traceback (most recent call last):
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     self.run()
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/multiprocessing/process.py", line 108, in run
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     self._target(*self._args, **self._kwargs)
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 846, in run_engine_core
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     raise e
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 833, in run_engine_core
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     engine_core = EngineCoreProc(*args, **kwargs)
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 606, in __init__
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     super().__init__(
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 102, in __init__
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     self.model_executor = executor_class(vllm_config)
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     self._init_executor()
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/executor/uniproc_executor.py", line 47, in _init_executor
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     self.driver_worker.init_device()
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/worker/worker_base.py", line 324, in init_device
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     self.worker.init_device()  # type: ignore
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m   File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/worker/gpu_worker.py", line 247, in init_device
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m     raise ValueError(
+[1;36m(EngineCore_DP0 pid=2881196)[0;0m ValueError: Free memory on device (6.28/79.33 GiB) on startup is less than desired GPU memory utilization (0.9, 71.39 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+Traceback (most recent call last):
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/basic_scripts/../evaluate.py", line 267, in <module>
+    app.run(main)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/basic_scripts/../evaluate.py", line 72, in main
+    train_intro, train_goals1, train_goals2, train_targets, test_intro, test_goals1, test_goals2, test_targets = get_goals_and_targets(params)
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/judge_attack/base/attack_manager.py", line 2550, in get_goals_and_targets
+    train_targets = get_target(train_data1,params,train_intro,train_texts1,train_texts2)
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/judge_attack/base/attack_manager.py", line 2218, in get_target
+    judge = create_vllm_judge(model_path=getattr(params, 'judge_model', None) or "/share/disk/llm_cache/gemma-3-4b-it",dtype="bfloat16")
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/judge_attack/base/vllm_judge.py", line 251, in create_vllm_judge
+    return VLLMJudge(cfg, model_path=model_path, tensor_parallel_size=tensor_parallel_size, dtype=dtype)
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/judge_attack/base/vllm_judge.py", line 46, in __init__
+    self.llm = LLM(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/entrypoints/llm.py", line 343, in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/llm_engine.py", line 174, in from_engine_args
+    return cls(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/llm_engine.py", line 108, in __init__
+    self.engine_core = EngineCoreClient.make_client(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 93, in make_client
+    return SyncMPClient(vllm_config, executor_class, log_stats)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 640, in __init__
+    super().__init__(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 469, in __init__
+    with launch_core_engines(vllm_config, executor_class, log_stats) as (
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/contextlib.py", line 142, in __exit__
+    next(self.gen)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/utils.py", line 907, in launch_core_engines
+    wait_for_engine_startup(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/vllm/v1/engine/utils.py", line 964, in wait_for_engine_startup
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}

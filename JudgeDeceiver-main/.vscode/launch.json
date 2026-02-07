@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🐍 Debug evaluate.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/experiments/evaluate.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "WANDB_MODE": "disabled",
+        "CUDA_VISIBLE_DEVICES": "2",
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "args": [
+            "--config=${workspaceFolder}/experiments/configs/gemma3.py",
+            "--config.train_data=${workspaceFolder}/dataset/data_for_train/basic/ourdata/arena_hard_test.json",
+            "--config.logfile=${workspaceFolder}/experiments/results/gemma3/gemma3_arena_hard_1_20251115-08:55:04.json",
+            "--config.n_train_data=100",
+            "--config.n_test_data=100",
+            "--config.eval_model=gemma3"
+        ],
+      "python": "python"
+    }
+  ]
+}

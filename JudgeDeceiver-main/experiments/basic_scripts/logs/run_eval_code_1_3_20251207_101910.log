@@ -1,0 +1,3518 @@
+nohup: ignoring input
+Folder '../eval/gemma3_12' already exists.
+🔍 没有 target 字段，开始通过 VLLMJudge 解析 text 获取 preference...
+
+INFO 12-07 10:19:18 [utils.py:253] non-default args: {'trust_remote_code': True, 'dtype': 'bfloat16', 'disable_log_stats': True, 'enforce_eager': True, 'model': '/share/disk/llm_cache/gemma-3-4b-it'}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+INFO 12-07 10:19:18 [model.py:631] Resolved architecture: Gemma3ForConditionalGeneration
+INFO 12-07 10:19:18 [model.py:1745] Using max model len 131072
+INFO 12-07 10:19:18 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 12-07 10:19:18 [vllm.py:500] Cudagraph is disabled under eager mode
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:23 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='/share/disk/llm_cache/gemma-3-4b-it', speculative_config=None, tokenizer='/share/disk/llm_cache/gemma-3-4b-it', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/share/disk/llm_cache/gemma-3-4b-it, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:25 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://192.168.80.2:60063 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:25 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:37 [gpu_model_runner.py:3259] Starting to load model /share/disk/llm_cache/gemma-3-4b-it...
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:37 [layer.py:570] MultiHeadAttention attn_backend: AttentionBackendEnum.FLASH_ATTN, use_upstream_fa: False
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:38 [vllm.py:500] Cudagraph is disabled under eager mode
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:38 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:38 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.09s/it]
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.03it/s]
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m 
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:40 [default_loader.py:314] Loading weights took 2.06 seconds
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:41 [gpu_model_runner.py:3338] Model loading took 8.5834 GiB memory and 2.603200 seconds
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:41 [gpu_model_runner.py:4088] Encoder cache will be initialized with a budget of 16384 tokens, and profiled with 63 image items of the maximum feature size.
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:46 [gpu_worker.py:359] Available KV cache memory: 47.89 GiB
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m WARNING 12-07 10:19:46 [kv_cache_utils.py:979] Add 1 padding layers, may waste at most 3.45% KV cache memory
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:46 [kv_cache_utils.py:1229] GPU KV cache size: 358,656 tokens
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:46 [kv_cache_utils.py:1234] Maximum concurrency for 131,072 tokens per request: 10.66x
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:46 [core.py:250] init engine (profile, create kv cache, warmup model) took 5.69 seconds
+[1;36m(EngineCore_DP0 pid=3083486)[0;0m INFO 12-07 10:19:48 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 12-07 10:19:49 [llm.py:352] Supported tasks: ['generate']
+Adding requests:   0%|          | 0/421 [00:00<?, ?it/s]Adding requests:   3%|▎         | 14/421 [00:00<00:02, 138.75it/s]Adding requests:   7%|▋         | 31/421 [00:00<00:02, 155.25it/s]Adding requests:  12%|█▏        | 50/421 [00:00<00:02, 170.18it/s]Adding requests:  16%|█▋        | 69/421 [00:00<00:01, 177.46it/s]Adding requests:  21%|██▏       | 90/421 [00:00<00:01, 185.96it/s]Adding requests:  26%|██▌       | 110/421 [00:00<00:01, 186.86it/s]Adding requests:  31%|███       | 129/421 [00:00<00:01, 185.33it/s]Adding requests:  35%|███▌      | 148/421 [00:00<00:01, 177.45it/s]Adding requests:  39%|███▉      | 166/421 [00:00<00:01, 176.26it/s]Adding requests:  44%|████▎     | 184/421 [00:01<00:01, 174.80it/s]Adding requests:  48%|████▊     | 202/421 [00:01<00:01, 172.60it/s]Adding requests:  54%|█████▍    | 227/421 [00:01<00:01, 190.03it/s]Adding requests:  58%|█████▊    | 246/421 [00:01<00:00, 182.63it/s]Adding requests:  64%|██████▎   | 268/421 [00:01<00:00, 189.62it/s]Adding requests:  68%|██████▊   | 287/421 [00:01<00:00, 170.37it/s]Adding requests:  73%|███████▎  | 307/421 [00:01<00:00, 176.65it/s]Adding requests:  77%|███████▋  | 325/421 [00:01<00:00, 164.84it/s]Adding requests:  83%|████████▎ | 348/421 [00:01<00:00, 180.87it/s]Adding requests:  87%|████████▋ | 368/421 [00:02<00:00, 181.75it/s]Adding requests:  92%|█████████▏| 387/421 [00:02<00:00, 182.31it/s]Adding requests:  97%|█████████▋| 408/421 [00:02<00:00, 188.70it/s]Adding requests: 100%|██████████| 421/421 [00:02<00:00, 179.75it/s]
+Processed prompts:   0%|          | 0/421 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/421 [00:03<21:50,  3.12s/it, est. speed input: 384.73 toks/s, output: 2.24 toks/s]Processed prompts:   0%|          | 2/421 [00:04<12:40,  1.82s/it, est. speed input: 581.91 toks/s, output: 3.48 toks/s]Processed prompts:   2%|▏         | 7/421 [00:04<03:24,  2.03it/s, est. speed input: 4349.16 toks/s, output: 9.98 toks/s]Processed prompts:   3%|▎         | 11/421 [00:05<02:29,  2.74it/s, est. speed input: 6037.50 toks/s, output: 13.23 toks/s]Processed prompts:   4%|▍         | 18/421 [00:06<01:35,  4.23it/s, est. speed input: 7981.53 toks/s, output: 18.74 toks/s]Processed prompts:   5%|▌         | 23/421 [00:07<01:26,  4.62it/s, est. speed input: 9183.14 toks/s, output: 21.11 toks/s]Processed prompts:   6%|▋         | 27/421 [00:08<01:26,  4.57it/s, est. speed input: 10233.07 toks/s, output: 22.16 toks/s]Processed prompts:   8%|▊         | 32/421 [00:09<01:19,  4.87it/s, est. speed input: 10985.09 toks/s, output: 23.77 toks/s]Processed prompts:   9%|▉         | 37/421 [00:10<01:15,  5.07it/s, est. speed input: 11897.41 toks/s, output: 25.08 toks/s]Processed prompts:  10%|█         | 44/421 [00:11<01:04,  5.87it/s, est. speed input: 12303.48 toks/s, output: 27.42 toks/s]Processed prompts:  12%|█▏        | 50/421 [00:12<01:01,  6.08it/s, est. speed input: 12898.52 toks/s, output: 28.81 toks/s]Processed prompts:  13%|█▎        | 56/421 [00:13<00:58,  6.25it/s, est. speed input: 13287.83 toks/s, output: 30.04 toks/s]Processed prompts:  14%|█▍        | 61/421 [00:13<00:59,  6.02it/s, est. speed input: 13646.87 toks/s, output: 30.58 toks/s]Processed prompts:  16%|█▌        | 66/421 [00:14<01:00,  5.86it/s, est. speed input: 13892.28 toks/s, output: 31.07 toks/s]Processed prompts:  18%|█▊        | 75/421 [00:15<00:48,  7.07it/s, est. speed input: 14228.70 toks/s, output: 33.27 toks/s]Processed prompts:  19%|█▉        | 80/421 [00:16<00:51,  6.59it/s, est. speed input: 14362.50 toks/s, output: 33.55 toks/s]Processed prompts:  21%|██        | 88/421 [00:17<00:45,  7.24it/s, est. speed input: 14805.55 toks/s, output: 34.99 toks/s]Processed prompts:  22%|██▏       | 93/421 [00:18<00:48,  6.74it/s, est. speed input: 14970.55 toks/s, output: 35.17 toks/s]Processed prompts:  24%|██▎       | 99/421 [00:19<00:48,  6.67it/s, est. speed input: 15244.14 toks/s, output: 35.66 toks/s]Processed prompts:  25%|██▍       | 104/421 [00:20<00:50,  6.29it/s, est. speed input: 15297.23 toks/s, output: 35.76 toks/s]Processed prompts:  26%|██▌       | 110/421 [00:21<00:48,  6.38it/s, est. speed input: 15510.21 toks/s, output: 36.21 toks/s]Processed prompts:  28%|██▊       | 118/421 [00:22<00:42,  7.09it/s, est. speed input: 15838.56 toks/s, output: 37.24 toks/s]Processed prompts:  29%|██▊       | 121/421 [00:23<00:50,  5.97it/s, est. speed input: 15830.10 toks/s, output: 36.70 toks/s]Processed prompts:  30%|███       | 128/421 [00:23<00:45,  6.47it/s, est. speed input: 15930.81 toks/s, output: 37.34 toks/s]Processed prompts:  32%|███▏      | 135/421 [00:24<00:41,  6.84it/s, est. speed input: 16095.41 toks/s, output: 37.94 toks/s]Processed prompts:  33%|███▎      | 140/421 [00:25<00:43,  6.45it/s, est. speed input: 16441.84 toks/s, output: 37.97 toks/s]Processed prompts:  34%|███▍      | 143/421 [00:26<00:50,  5.50it/s, est. speed input: 16405.60 toks/s, output: 37.46 toks/s]Processed prompts:  35%|███▍      | 147/421 [00:27<00:53,  5.16it/s, est. speed input: 16410.51 toks/s, output: 37.23 toks/s]Processed prompts:  36%|███▌      | 151/421 [00:28<00:54,  4.94it/s, est. speed input: 16372.15 toks/s, output: 37.03 toks/s]Processed prompts:  38%|███▊      | 158/421 [00:29<00:45,  5.77it/s, est. speed input: 16657.92 toks/s, output: 37.55 toks/s]Processed prompts:  39%|███▊      | 163/421 [00:30<00:45,  5.69it/s, est. speed input: 16670.38 toks/s, output: 37.59 toks/s]Processed prompts:  39%|███▉      | 166/421 [00:31<00:51,  5.00it/s, est. speed input: 16654.04 toks/s, output: 37.18 toks/s]Processed prompts:  41%|████      | 172/421 [00:32<00:45,  5.49it/s, est. speed input: 16656.38 toks/s, output: 37.44 toks/s]Processed prompts:  42%|████▏     | 178/421 [00:33<00:41,  5.84it/s, est. speed input: 16737.88 toks/s, output: 37.69 toks/s]Processed prompts:  43%|████▎     | 183/421 [00:33<00:41,  5.75it/s, est. speed input: 16820.54 toks/s, output: 37.72 toks/s]Processed prompts:  45%|████▍     | 188/421 [00:34<00:40,  5.69it/s, est. speed input: 16918.54 toks/s, output: 37.75 toks/s]Processed prompts:  46%|████▌     | 193/421 [00:35<00:40,  5.63it/s, est. speed input: 16973.43 toks/s, output: 37.77 toks/s]Processed prompts:  47%|████▋     | 197/421 [00:36<00:42,  5.26it/s, est. speed input: 16991.90 toks/s, output: 37.59 toks/s]Processed prompts:  49%|████▉     | 207/421 [00:37<00:30,  6.98it/s, est. speed input: 17081.19 toks/s, output: 38.54 toks/s]Processed prompts:  51%|█████     | 213/421 [00:38<00:30,  6.88it/s, est. speed input: 17133.29 toks/s, output: 38.73 toks/s]Processed prompts:  52%|█████▏    | 221/421 [00:39<00:26,  7.44it/s, est. speed input: 17133.41 toks/s, output: 39.25 toks/s]Processed prompts:  54%|█████▍    | 227/421 [00:40<00:26,  7.20it/s, est. speed input: 17232.35 toks/s, output: 39.41 toks/s]Processed prompts:  55%|█████▌    | 233/421 [00:41<00:26,  7.03it/s, est. speed input: 17223.79 toks/s, output: 39.57 toks/s]Processed prompts:  57%|█████▋    | 238/421 [00:42<00:27,  6.57it/s, est. speed input: 17343.38 toks/s, output: 39.54 toks/s]Processed prompts:  57%|█████▋    | 242/421 [00:43<00:30,  5.92it/s, est. speed input: 17332.12 toks/s, output: 39.36 toks/s]Processed prompts:  59%|█████▉    | 248/421 [00:43<00:28,  6.11it/s, est. speed input: 17334.33 toks/s, output: 39.49 toks/s]Processed prompts:  61%|██████    | 256/421 [00:44<00:23,  6.89it/s, est. speed input: 17380.37 toks/s, output: 39.93 toks/s]Processed prompts:  62%|██████▏   | 261/421 [00:45<00:24,  6.47it/s, est. speed input: 17494.55 toks/s, output: 39.90 toks/s]Processed prompts:  64%|██████▎   | 268/421 [00:46<00:22,  6.79it/s, est. speed input: 17527.51 toks/s, output: 40.16 toks/s]Processed prompts:  65%|██████▍   | 272/421 [00:47<00:24,  6.00it/s, est. speed input: 17492.04 toks/s, output: 39.94 toks/s]Processed prompts:  66%|██████▌   | 276/421 [00:48<00:26,  5.53it/s, est. speed input: 17571.93 toks/s, output: 39.77 toks/s]Processed prompts:  67%|██████▋   | 281/421 [00:49<00:25,  5.50it/s, est. speed input: 17547.30 toks/s, output: 39.74 toks/s]Processed prompts:  68%|██████▊   | 285/421 [00:50<00:26,  5.16it/s, est. speed input: 17638.74 toks/s, output: 39.58 toks/s]Processed prompts:  68%|██████▊   | 288/421 [00:51<00:29,  4.56it/s, est. speed input: 17581.39 toks/s, output: 39.26 toks/s]Processed prompts:  71%|███████   | 298/421 [00:52<00:19,  6.47it/s, est. speed input: 17738.62 toks/s, output: 39.92 toks/s]Processed prompts:  72%|███████▏  | 302/421 [00:53<00:20,  5.84it/s, est. speed input: 17652.34 toks/s, output: 39.76 toks/s]Processed prompts:  73%|███████▎  | 306/421 [00:54<00:21,  5.39it/s, est. speed input: 17656.99 toks/s, output: 39.60 toks/s]Processed prompts:  74%|███████▍  | 311/421 [00:55<00:20,  5.42it/s, est. speed input: 17682.40 toks/s, output: 39.58 toks/s]Processed prompts:  75%|███████▌  | 317/421 [00:55<00:18,  5.74it/s, est. speed input: 17760.73 toks/s, output: 39.67 toks/s]Processed prompts:  76%|███████▋  | 322/421 [00:56<00:17,  5.67it/s, est. speed input: 17884.04 toks/s, output: 39.65 toks/s]Processed prompts:  77%|███████▋  | 324/421 [00:57<00:20,  4.63it/s, est. speed input: 17740.65 toks/s, output: 39.27 toks/s]Processed prompts:  80%|███████▉  | 335/421 [00:58<00:12,  6.85it/s, est. speed input: 17791.27 toks/s, output: 39.97 toks/s]Processed prompts:  81%|████████▏ | 343/421 [00:59<00:10,  7.45it/s, est. speed input: 17905.60 toks/s, output: 40.31 toks/s]Processed prompts:  82%|████████▏ | 346/421 [01:00<00:12,  6.20it/s, est. speed input: 17869.67 toks/s, output: 40.05 toks/s]Processed prompts:  84%|████████▍ | 354/421 [01:01<00:09,  7.00it/s, est. speed input: 17949.16 toks/s, output: 40.37 toks/s]Processed prompts:  85%|████████▍ | 357/421 [01:02<00:10,  5.88it/s, est. speed input: 17921.49 toks/s, output: 40.12 toks/s]Processed prompts:  86%|████████▋ | 364/421 [01:03<00:08,  6.44it/s, est. speed input: 17920.13 toks/s, output: 40.32 toks/s]Processed prompts:  88%|████████▊ | 369/421 [01:04<00:08,  6.17it/s, est. speed input: 17935.21 toks/s, output: 40.30 toks/s]Processed prompts:  89%|████████▉ | 374/421 [01:05<00:07,  5.96it/s, est. speed input: 17939.09 toks/s, output: 40.27 toks/s]Processed prompts:  90%|█████████ | 380/421 [01:05<00:06,  6.73it/s, est. speed input: 18059.96 toks/s, output: 40.51 toks/s]Processed prompts:  93%|█████████▎| 393/421 [01:05<00:02, 12.73it/s, est. speed input: 18593.64 toks/s, output: 41.83 toks/s]Processed prompts:  98%|█████████▊| 412/421 [01:05<00:00, 23.80it/s, est. speed input: 19335.82 toks/s, output: 43.76 toks/s]Processed prompts: 100%|██████████| 421/421 [01:05<00:00, 23.80it/s, est. speed input: 19753.21 toks/s, output: 44.68 toks/s]Processed prompts: 100%|██████████| 421/421 [01:05<00:00,  6.38it/s, est. speed input: 19753.21 toks/s, output: 44.68 toks/s]
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+✅ 解析完成
+🔍 没有 target 字段，开始通过 VLLMJudge 解析 text 获取 preference...
+
+INFO 12-07 10:20:58 [utils.py:253] non-default args: {'trust_remote_code': True, 'dtype': 'bfloat16', 'disable_log_stats': True, 'enforce_eager': True, 'model': '/share/disk/llm_cache/gemma-3-4b-it'}
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+INFO 12-07 10:20:58 [model.py:631] Resolved architecture: Gemma3ForConditionalGeneration
+INFO 12-07 10:20:58 [model.py:1745] Using max model len 131072
+INFO 12-07 10:20:58 [scheduler.py:216] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 12-07 10:20:58 [vllm.py:500] Cudagraph is disabled under eager mode
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:20:59 [core.py:93] Initializing a V1 LLM engine (v0.11.2) with config: model='/share/disk/llm_cache/gemma-3-4b-it', speculative_config=None, tokenizer='/share/disk/llm_cache/gemma-3-4b-it', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/share/disk/llm_cache/gemma-3-4b-it, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': None, 'compile_mm_encoder': False, 'use_inductor': None, 'compile_sizes': [], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {}, 'max_cudagraph_capture_size': 0, 'local_cache_dir': None}
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:01 [parallel_state.py:1208] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://192.168.80.2:37867 backend=nccl
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:01 [parallel_state.py:1394] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:13 [gpu_model_runner.py:3259] Starting to load model /share/disk/llm_cache/gemma-3-4b-it...
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:14 [layer.py:570] MultiHeadAttention attn_backend: AttentionBackendEnum.FLASH_ATTN, use_upstream_fa: False
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:14 [vllm.py:500] Cudagraph is disabled under eager mode
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:14 [cuda.py:418] Valid backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION']
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:14 [cuda.py:427] Using FLASH_ATTN backend.
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.06s/it]
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.07it/s]
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.05it/s]
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m 
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:16 [default_loader.py:314] Loading weights took 2.03 seconds
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:17 [gpu_model_runner.py:3338] Model loading took 8.5834 GiB memory and 2.447899 seconds
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:17 [gpu_model_runner.py:4088] Encoder cache will be initialized with a budget of 16384 tokens, and profiled with 63 image items of the maximum feature size.
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:22 [gpu_worker.py:359] Available KV cache memory: 47.89 GiB
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m WARNING 12-07 10:21:22 [kv_cache_utils.py:979] Add 1 padding layers, may waste at most 3.45% KV cache memory
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:22 [kv_cache_utils.py:1229] GPU KV cache size: 358,656 tokens
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:22 [kv_cache_utils.py:1234] Maximum concurrency for 131,072 tokens per request: 10.66x
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:23 [core.py:250] init engine (profile, create kv cache, warmup model) took 5.80 seconds
+[1;36m(EngineCore_DP0 pid=3239260)[0;0m INFO 12-07 10:21:26 [vllm.py:500] Cudagraph is disabled under eager mode
+INFO 12-07 10:21:26 [llm.py:352] Supported tasks: ['generate']
+Adding requests:   0%|          | 0/421 [00:00<?, ?it/s]Adding requests:   3%|▎         | 11/421 [00:00<00:03, 108.58it/s]Adding requests:   6%|▌         | 26/421 [00:00<00:03, 131.59it/s]Adding requests:  11%|█         | 45/421 [00:00<00:02, 151.86it/s]Adding requests:  15%|█▌        | 65/421 [00:00<00:02, 169.76it/s]Adding requests:  20%|██        | 85/421 [00:00<00:01, 180.41it/s]Adding requests:  25%|██▍       | 104/421 [00:00<00:01, 182.85it/s]Adding requests:  29%|██▉       | 123/421 [00:00<00:01, 181.28it/s]Adding requests:  34%|███▎      | 142/421 [00:00<00:01, 182.86it/s]Adding requests:  38%|███▊      | 161/421 [00:00<00:01, 175.77it/s]Adding requests:  43%|████▎     | 179/421 [00:01<00:01, 174.26it/s]Adding requests:  47%|████▋     | 197/421 [00:01<00:01, 170.74it/s]Adding requests:  53%|█████▎    | 223/421 [00:01<00:01, 192.24it/s]Adding requests:  58%|█████▊    | 243/421 [00:01<00:00, 184.89it/s]Adding requests:  63%|██████▎   | 264/421 [00:01<00:00, 189.01it/s]Adding requests:  67%|██████▋   | 283/421 [00:01<00:00, 176.56it/s]Adding requests:  71%|███████▏  | 301/421 [00:01<00:00, 173.92it/s]Adding requests:  76%|███████▌  | 319/421 [00:01<00:00, 170.19it/s]Adding requests:  81%|████████  | 340/421 [00:01<00:00, 180.57it/s]Adding requests:  85%|████████▌ | 359/421 [00:02<00:00, 177.37it/s]Adding requests:  90%|█████████ | 380/421 [00:02<00:00, 181.93it/s]Adding requests:  95%|█████████▌| 401/421 [00:02<00:00, 188.11it/s]Adding requests: 100%|██████████| 421/421 [00:02<00:00, 188.59it/s]Adding requests: 100%|██████████| 421/421 [00:02<00:00, 178.21it/s]
+Processed prompts:   0%|          | 0/421 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/421 [00:03<21:53,  3.13s/it, est. speed input: 383.63 toks/s, output: 2.24 toks/s]Processed prompts:   0%|          | 2/421 [00:04<12:42,  1.82s/it, est. speed input: 580.16 toks/s, output: 3.47 toks/s]Processed prompts:   2%|▏         | 7/421 [00:04<03:24,  2.02it/s, est. speed input: 4336.46 toks/s, output: 9.95 toks/s]Processed prompts:   3%|▎         | 11/421 [00:05<02:30,  2.73it/s, est. speed input: 6016.94 toks/s, output: 13.18 toks/s]Processed prompts:   4%|▍         | 18/421 [00:06<01:35,  4.22it/s, est. speed input: 7955.84 toks/s, output: 18.68 toks/s]Processed prompts:   5%|▌         | 23/421 [00:07<01:26,  4.61it/s, est. speed input: 9160.00 toks/s, output: 21.06 toks/s]Processed prompts:   6%|▋         | 27/421 [00:08<01:26,  4.56it/s, est. speed input: 10207.53 toks/s, output: 22.11 toks/s]Processed prompts:   8%|▊         | 32/421 [00:09<01:20,  4.86it/s, est. speed input: 10958.10 toks/s, output: 23.71 toks/s]Processed prompts:   9%|▉         | 37/421 [00:10<01:15,  5.06it/s, est. speed input: 11870.69 toks/s, output: 25.02 toks/s]Processed prompts:  10%|█         | 44/421 [00:11<01:04,  5.87it/s, est. speed input: 12283.84 toks/s, output: 27.38 toks/s]Processed prompts:  12%|█▏        | 50/421 [00:12<01:01,  6.07it/s, est. speed input: 12876.53 toks/s, output: 28.76 toks/s]Processed prompts:  13%|█▎        | 56/421 [00:13<00:58,  6.25it/s, est. speed input: 13270.21 toks/s, output: 30.00 toks/s]Processed prompts:  14%|█▍        | 61/421 [00:13<00:59,  6.04it/s, est. speed input: 13640.60 toks/s, output: 30.57 toks/s]Processed prompts:  16%|█▌        | 66/421 [00:14<01:00,  5.87it/s, est. speed input: 13883.93 toks/s, output: 31.05 toks/s]Processed prompts:  18%|█▊        | 75/421 [00:15<00:48,  7.11it/s, est. speed input: 14231.10 toks/s, output: 33.27 toks/s]Processed prompts:  19%|█▉        | 80/421 [00:16<00:51,  6.60it/s, est. speed input: 14357.28 toks/s, output: 33.54 toks/s]Processed prompts:  21%|██        | 88/421 [00:17<00:45,  7.29it/s, est. speed input: 14814.03 toks/s, output: 35.01 toks/s]Processed prompts:  22%|██▏       | 93/421 [00:18<00:48,  6.76it/s, est. speed input: 14978.20 toks/s, output: 35.19 toks/s]Processed prompts:  24%|██▎       | 99/421 [00:19<00:48,  6.70it/s, est. speed input: 15256.67 toks/s, output: 35.69 toks/s]Processed prompts:  25%|██▍       | 104/421 [00:20<00:50,  6.31it/s, est. speed input: 15308.67 toks/s, output: 35.79 toks/s]Processed prompts:  26%|██▌       | 110/421 [00:21<00:48,  6.38it/s, est. speed input: 15516.51 toks/s, output: 36.23 toks/s]Processed prompts:  28%|██▊       | 118/421 [00:22<00:42,  7.11it/s, est. speed input: 15851.31 toks/s, output: 37.27 toks/s]Processed prompts:  29%|██▊       | 121/421 [00:23<00:50,  5.97it/s, est. speed input: 15838.98 toks/s, output: 36.72 toks/s]Processed prompts:  30%|███       | 128/421 [00:23<00:45,  6.50it/s, est. speed input: 15948.02 toks/s, output: 37.38 toks/s]Processed prompts:  32%|███▏      | 135/421 [00:24<00:41,  6.85it/s, est. speed input: 16108.80 toks/s, output: 37.97 toks/s]Processed prompts:  33%|███▎      | 140/421 [00:25<00:43,  6.47it/s, est. speed input: 16459.86 toks/s, output: 38.01 toks/s]Processed prompts:  34%|███▍      | 143/421 [00:26<00:50,  5.52it/s, est. speed input: 16424.17 toks/s, output: 37.50 toks/s]Processed prompts:  35%|███▍      | 147/421 [00:27<00:52,  5.17it/s, est. speed input: 16428.35 toks/s, output: 37.27 toks/s]Processed prompts:  36%|███▌      | 151/421 [00:28<00:54,  4.93it/s, est. speed input: 16386.24 toks/s, output: 37.06 toks/s]Processed prompts:  38%|███▊      | 158/421 [00:29<00:45,  5.74it/s, est. speed input: 16662.40 toks/s, output: 37.56 toks/s]Processed prompts:  39%|███▊      | 163/421 [00:30<00:45,  5.63it/s, est. speed input: 16662.51 toks/s, output: 37.57 toks/s]Processed prompts:  39%|███▉      | 166/421 [00:31<00:51,  4.94it/s, est. speed input: 16640.35 toks/s, output: 37.15 toks/s]Processed prompts:  41%|████      | 172/421 [00:32<00:45,  5.44it/s, est. speed input: 16643.50 toks/s, output: 37.41 toks/s]Processed prompts:  42%|████▏     | 178/421 [00:33<00:41,  5.79it/s, est. speed input: 16720.16 toks/s, output: 37.65 toks/s]Processed prompts:  43%|████▎     | 183/421 [00:34<00:41,  5.70it/s, est. speed input: 16799.53 toks/s, output: 37.67 toks/s]Processed prompts:  45%|████▍     | 188/421 [00:34<00:41,  5.63it/s, est. speed input: 16891.02 toks/s, output: 37.69 toks/s]Processed prompts:  46%|████▌     | 193/421 [00:35<00:40,  5.58it/s, est. speed input: 16944.30 toks/s, output: 37.70 toks/s]Processed prompts:  47%|████▋     | 197/421 [00:36<00:43,  5.20it/s, est. speed input: 16957.12 toks/s, output: 37.51 toks/s]Processed prompts:  49%|████▉     | 207/421 [00:37<00:30,  6.92it/s, est. speed input: 17044.85 toks/s, output: 38.46 toks/s]Processed prompts:  51%|█████     | 213/421 [00:38<00:30,  6.81it/s, est. speed input: 17092.58 toks/s, output: 38.64 toks/s]Processed prompts:  52%|█████▏    | 221/421 [00:39<00:27,  7.39it/s, est. speed input: 17094.65 toks/s, output: 39.16 toks/s]Processed prompts:  54%|█████▍    | 227/421 [00:40<00:27,  7.15it/s, est. speed input: 17190.92 toks/s, output: 39.32 toks/s]Processed prompts:  55%|█████▌    | 233/421 [00:41<00:27,  6.94it/s, est. speed input: 17173.98 toks/s, output: 39.45 toks/s]Processed prompts:  57%|█████▋    | 238/421 [00:42<00:28,  6.40it/s, est. speed input: 17272.60 toks/s, output: 39.38 toks/s]Processed prompts:  57%|█████▋    | 242/421 [00:43<00:31,  5.71it/s, est. speed input: 17241.07 toks/s, output: 39.15 toks/s]Processed prompts:  59%|█████▉    | 248/421 [00:44<00:29,  5.86it/s, est. speed input: 17226.19 toks/s, output: 39.25 toks/s]Processed prompts:  61%|██████    | 256/421 [00:45<00:25,  6.58it/s, est. speed input: 17253.36 toks/s, output: 39.64 toks/s]Processed prompts:  62%|██████▏   | 261/421 [00:46<00:25,  6.19it/s, est. speed input: 17354.43 toks/s, output: 39.58 toks/s]Processed prompts:  64%|██████▎   | 268/421 [00:47<00:23,  6.50it/s, est. speed input: 17375.11 toks/s, output: 39.81 toks/s]Processed prompts:  65%|██████▍   | 272/421 [00:48<00:25,  5.77it/s, est. speed input: 17334.54 toks/s, output: 39.58 toks/s]Processed prompts:  66%|██████▌   | 276/421 [00:49<00:27,  5.30it/s, est. speed input: 17398.72 toks/s, output: 39.38 toks/s]Processed prompts:  67%|██████▋   | 281/421 [00:50<00:26,  5.26it/s, est. speed input: 17362.25 toks/s, output: 39.32 toks/s]Processed prompts:  68%|██████▊   | 285/421 [00:50<00:27,  4.94it/s, est. speed input: 17441.16 toks/s, output: 39.13 toks/s]Processed prompts:  68%|██████▊   | 288/421 [00:51<00:30,  4.37it/s, est. speed input: 17374.74 toks/s, output: 38.80 toks/s]Processed prompts:  71%|███████   | 298/421 [00:52<00:19,  6.19it/s, est. speed input: 17520.00 toks/s, output: 39.43 toks/s]Processed prompts:  72%|███████▏  | 302/421 [00:53<00:21,  5.60it/s, est. speed input: 17426.38 toks/s, output: 39.25 toks/s]Processed prompts:  73%|███████▎  | 306/421 [00:54<00:22,  5.15it/s, est. speed input: 17419.30 toks/s, output: 39.06 toks/s]Processed prompts:  74%|███████▍  | 311/421 [00:55<00:21,  5.18it/s, est. speed input: 17435.72 toks/s, output: 39.02 toks/s]Processed prompts:  75%|███████▌  | 317/421 [00:56<00:18,  5.49it/s, est. speed input: 17503.35 toks/s, output: 39.10 toks/s]Processed prompts:  76%|███████▋  | 322/421 [00:57<00:18,  5.40it/s, est. speed input: 17612.60 toks/s, output: 39.05 toks/s]Processed prompts:  77%|███████▋  | 324/421 [00:58<00:22,  4.40it/s, est. speed input: 17460.08 toks/s, output: 38.65 toks/s]Processed prompts:  80%|███████▉  | 335/421 [00:59<00:13,  6.52it/s, est. speed input: 17500.69 toks/s, output: 39.32 toks/s]Processed prompts:  81%|████████▏ | 343/421 [01:00<00:11,  7.07it/s, est. speed input: 17602.15 toks/s, output: 39.62 toks/s]Processed prompts:  82%|████████▏ | 346/421 [01:01<00:12,  5.89it/s, est. speed input: 17558.02 toks/s, output: 39.35 toks/s]Processed prompts:  84%|████████▍ | 354/421 [01:02<00:10,  6.62it/s, est. speed input: 17623.67 toks/s, output: 39.64 toks/s]Processed prompts:  85%|████████▍ | 357/421 [01:03<00:11,  5.57it/s, est. speed input: 17587.63 toks/s, output: 39.37 toks/s]Processed prompts:  86%|████████▋ | 364/421 [01:04<00:09,  6.09it/s, est. speed input: 17576.47 toks/s, output: 39.54 toks/s]Processed prompts:  88%|████████▊ | 369/421 [01:05<00:08,  5.82it/s, est. speed input: 17580.34 toks/s, output: 39.50 toks/s]Processed prompts:  89%|████████▉ | 374/421 [01:06<00:08,  5.63it/s, est. speed input: 17575.16 toks/s, output: 39.45 toks/s]Processed prompts:  90%|█████████ | 380/421 [01:07<00:06,  6.36it/s, est. speed input: 17687.03 toks/s, output: 39.67 toks/s]Processed prompts:  93%|█████████▎| 393/421 [01:07<00:02, 12.09it/s, est. speed input: 18211.54 toks/s, output: 40.97 toks/s]Processed prompts:  98%|█████████▊| 412/421 [01:07<00:00, 22.71it/s, est. speed input: 18939.46 toks/s, output: 42.86 toks/s]Processed prompts: 100%|██████████| 421/421 [01:07<00:00, 22.71it/s, est. speed input: 19348.84 toks/s, output: 43.77 toks/s]Processed prompts: 100%|██████████| 421/421 [01:07<00:00,  6.25it/s, est. speed input: 19348.84 toks/s, output: 43.77 toks/s]
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+
+Output (b)
+
+1
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (a)
+
+0
+
+Output (b)
+
+1
+✅ 解析完成
+✅ Loaded 421 train samples, 421 test samples.
+Traceback (most recent call last):
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 407, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://hf-mirror.com/gemma3_12/resolve/main/tokenizer_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/transformers/utils/hub.py", line 478, in cached_files
+    hf_hub_download(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1010, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1117, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1658, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1546, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1463, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 286, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 310, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 457, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response) from e
+huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6934e4ed-58929e6118d42d56466d2a78;d3494fc4-a64c-46da-80a5-29a6f561715d)
+
+Repository Not Found for url: https://hf-mirror.com/gemma3_12/resolve/main/tokenizer_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/basic_scripts/../evaluate.py", line 267, in <module>
+    app.run(main)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/basic_scripts/../evaluate.py", line 195, in main
+    workers, test_workers = get_workers(params, eval=True)
+  File "/home/wzdou/project_zhouzheng/JudgeDeiceiver_11/JudgeDeceiver-main/experiments/judge_attack/base/attack_manager.py", line 2004, in get_workers
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 1058, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 890, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/transformers/utils/hub.py", line 321, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/wzdou/miniconda3/envs/hydraattack/lib/python3.10/site-packages/transformers/utils/hub.py", line 510, in cached_files
+    raise OSError(
+OSError: gemma3_12 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
