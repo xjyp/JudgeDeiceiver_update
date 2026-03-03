@@ -1,3 +1,5 @@
+# 用于单独跑多模态模型：Qwen3-VL-8B-Instruct，与gcg_attack.py一起替换项目中的相应文件即可
+
 import gc
 import json
 import math
