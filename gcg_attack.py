@@ -1,3 +1,5 @@
+# 用于单独跑多模态模型：Qwen3-VL-8B-Instruct
+
 import gc
 
 import numpy as np
